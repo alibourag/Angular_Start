@@ -1,0 +1,28 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class='navbar-brand'>{{pageTitle}}</a>
+  <ul class='nav nav-pills'>
+    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>
+    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products']">Product List</a></li>
+    <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/products',0,'edit']">Add Product</a></li>
+  </ul>
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class='nav-link' [routerLink]="['/login']">welcome </a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class='nav-link' (click)="displayMessage()">show Messages </a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class='nav-link' (click)="hideMessage()">hide Messages </a>
+    </li>
+    <li class="nav-item" *ngIf="!isLoggedIn">
+      <a class='nav-link' [routerLink]="['/login']">log In </a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class='nav-link' (click)="logOut()">log out </a>
+    </li>
+  </ul>
+</nav>  
+<div class='container'>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <router-outlet></router-outlet>
+        <div class="colo-md-4 gap-2 d-md-flex">
+            <button class="btn btn-primary mr-3"
+                    style="width: 80px;"
+                    type="button"
+                    (click)="saveProd()"
+            >
+                Save
+            </button>
+            <button class="btn btn-outline-secondary mr-3"
+                    style="width: 80px;"
+                    [routerLink]="['/products']"
+            >
+                Cancel
+            </button>
+            <button class="btn btn-outline-warning mr-3"
+                    style="width: 80px;"
+                    type="button"
+                    (click)="saveProd()"
+            >
+                Delet
+            </button>
+        </div>
+
+    </div>
+</div>
